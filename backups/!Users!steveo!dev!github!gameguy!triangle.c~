@@ -1,0 +1,3 @@
+/* Guess I have to include sdl here because I'm using it for drawing. */
+#include <sdl2/sdl.h>
+#include "gameguy.h"

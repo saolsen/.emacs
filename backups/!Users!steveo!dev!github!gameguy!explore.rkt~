@@ -1,0 +1,20 @@
+#lang racket
+;; Exploritory Testing Ground
+;; Just going to mess around until I know what I'm doing.
+
+;; What is a good very first step. Well it's making a guy from scratch of course!
+(require 2htdp/image)
+(require 2htdp/universe)
+;;(require pict)
+
+(define (start-scene)
+  (big-bang 1
+            (on-tick add1)
+            (to-draw (lambda (n) (empty-scene 100 100)))))
+
+;; I think I'll have to actuially do some ray tracing style stuff. And do some
+;; 3d geometry primitives stuff. Want to do lots of playing around with 
+;; some different grammars. Might need to start with racket lsystems, lol.
+
+;; I thought I saw some sprite grammar project, maybe from the proc gen game jam.
+;; Should look into that.

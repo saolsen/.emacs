@@ -1,0 +1,28 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch structure
+# Changes to be committed:
+#	modified:   gameguy.h
+#	modified:   platformer.c
+#	modified:   rendertests.c
+#	modified:   sdl_gameguy.c
+#
+# Untracked files:
+#	.DS_Store
+#	gameguy
+#	gameguy.c
+#	gameguy.dSYM/
+#	isometric
+#	isometric.c
+#	isometric.dSYM/
+#	opengl_notes.org
+#	opengl_test.c
+#	platformer
+#	platformer.dSYM/
+#	rendertests
+#	rendertests.dSYM/
+#	rockets.c
+#	triangle.c
+#	weird_gradiant.c
+#

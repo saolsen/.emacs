@@ -1,0 +1,15 @@
+/*
+ * Trying to learn the various ways to render things in SDL. 2d only to start.
+ */
+#include <sdl2/sdl.h>
+#include "gameguy.h"
+
+void
+update_and_render(SDL_Renderer renderer)
+{
+  SDL_Surface *s = SDL_CreateRGBSurface(0, width, height, 32, 0, 0, 0, 0);
+  SDL_FillRect(s, NULL, SDL_MapRGB(s->format, 255, 0, 0));
+  SDL_Bitmap *star_bitmap = SDL_CreateTextureFromSurface(renderer, s);
+  SDL_FreeSurface(s);
+ 
+}

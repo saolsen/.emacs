@@ -1,0 +1,18 @@
+from tornado.web import Application, RequestHandler, url
+
+class HelloWorldHandler(RequestHandler):
+    def get(self):
+        response = {'hello': 'world'}
+        self.write(response)
+
+class RexApplication(Application):
+    def __init__(self):
+        handlers = [
+            url(r'^/hello', HelloWorldHandler)
+        ]
+
+        settings= dict(
+            debug=True,
+        )
+
+        super(RexApplication, self).__init__(handlers, **settings)

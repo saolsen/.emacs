@@ -1,0 +1,5 @@
+# Need this because don't want to use xcode.
+all: gameguy
+
+gameguy:
+	xcodebuild -project xcode/gameguy.xcodeproj

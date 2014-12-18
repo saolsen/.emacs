@@ -1,0 +1,13 @@
+from .base import *
+from os.path import join, normpath
+
+# Use a sqlite database in local development.
+DATABASES['default'] = {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': normpath(join(REPO_ROOT, 'db.sqlite3')),
+}
+
+
+DEBUG = true;
+# Print emails to the console for local development.
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

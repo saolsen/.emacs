@@ -1,0 +1,10 @@
+* Engine Stuff
+** Timer
+Want a timer / gameclock that is independant of the real system time. This way
+animations and things runat a framerate independant rate. During debugging I
+also want to be able to step the frame like a second at a time so it's actually
+debugable. This will take some thought.
+** Debugging
+I want to get a better debug env up. I want a hotkey to run the program with debugging
+and I don't want it to launch gdb in the buffer I'm in because then I have to fuck
+around with buffers to find the source again.

@@ -1,0 +1,112 @@
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+(setq el-get-user-package-directory "~/.emacs.d/el-get-init/")
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
+
+;;                       ;; paredit
+;;                       ;; clojure-mode
+;;                       ;; cider
+;;                       ;; icomplete
+;;                       ;; company
+;;                       ;; flx-ido
+;;                       ;; projectile
+;;                       ;; markdown-mode
+;;                       ;; racket-mode
+;;                       ;;exec-path-from-shell
+
+
+;; IDO
+(setq ido-decorations
+      (quote
+       ("\n-> "           ; Opening bracket around prospect list
+        ""                ; Closing bracket around prospect list
+        "\n   "           ; separator between prospects
+        "\n   ..."        ; appears at end of truncated list of prospects
+        "["               ; opening bracket around common match string
+        "]"               ; closing bracket around common match string
+        " [No match]"     ; displayed when there is no match
+        " [Matched]"      ; displayed if there is a single match
+        " [Not readable]" ; current diretory is not readable
+        " [Too big]"      ; directory too big
+        " [Confirm]")))   ; confirm creation of new file or buffer
+
+(add-hook 'ido-setup-hook
+          (lambda ()
+            (define-key ido-completion-map [down] 'ido-next-match)
+            (define-key ido-completion-map [up] 'ido-prev-match)
+            (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+            (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+;; Clojure
+(defun turn-on-paredit () (paredit-mode 1))
+(add-hook 'clojure-mode-hook 'turn-on-paredit)
+(add-hook 'cider-repl-mode-hook 'company-mode)
+(add-hook 'cider-mode-hook 'company-mode)
+
+;; Projectile
+(projectile-global-mode)
+
+;; Visual
+(setq visual-bell nil)
+(setq ring-bell-function 'ignore)
+
+;; Line Numbers
+(global-linum-mode t)
+(setq linum-format "%4d ")
+(line-number-mode 1)
+(column-number-mode 1)
+
+;; Tabs
+(setq-default tab-width 2)
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Set C-x ret to be the M-x command
+(global-set-key (kbd "C-x RET") 'execute-extended-command)
+
+;; Arcadia
+;; This is hardcoded to my lsystems project, TODO fix that
+(defcustom arcadia-repl-command "ruby /Users/steveo/Dropbox/unity/lsystems/Assets/Clojure/Editor/repl-client.rb"
+  "Command to use for the Arcadia REPL into Unity.")
+
+(defcustom lein-repl-command "lein repl"
+"Command to use to start inferior lisp repl")
+
+(defun arcadia-repl ()
+  "Start repl"
+  (interactive)
+  (run-lisp arcadia-repl-command))
+
+;; Racket
+(global-set-key (kbd "s-r") 'racket-run)
+
+;;(load-theme 'solarized-light t)
+;(load-theme 'tangotango t)
+
+
+;; C STUFF
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+	 (quote
+		("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

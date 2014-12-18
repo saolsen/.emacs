@@ -1,0 +1,54 @@
+/*
+ * A 2d platformer game in one file!
+ */
+#include <sdl2/sdl.h>
+#include <stdbool.h>
+#include "gameguy.h"
+
+void
+clear_screen(SDL_Renderer *renderer)
+{
+  /* Clear the Screen */
+  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+  SDL_RenderClear(renderer);
+}
+
+void
+draw_rect(SDL_Renderer *renderer, int x, int y, int w, int h, int r, int g, int b)
+{
+  SDL_SetRenderDrawColor(renderer, r, g, b, 255);
+  SDL_Rect rect;
+  rect.x = x;
+  rect.y = y;
+  rect.w = w;
+  rect.h = h;
+  SDL_RenderDrawRect(renderer, &rect);
+}
+
+void draw_ground(SDL_Renderer *renderer)
+{
+  
+}
+
+void
+update_and_render(SDL_Renderer *renderer)
+{
+  /* Don't do this, figure out how you're going to manage gamestate. */
+  static int x_pos = 0;
+  static bool right = true;
+  
+  clear_screen(renderer);
+
+  draw_rect(renderer, x_pos, 10, 10, 10, 0, 255, 0);
+
+  /* Update the screen */
+  SDL_RenderPresent(renderer);
+
+  if (right) {
+    if (++x_pos > 630)
+      right = false;
+  } else {
+    if (--x_pos < 0)
+      right = true;
+  }
+}

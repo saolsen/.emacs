@@ -1,0 +1,8 @@
+#if !defined(GAMEGUY_H)
+/* todo(stephen): header comment for my files */
+
+
+/* internal void GameUpdateAndRender(game_offscreen_buffer *Buffer, int BlueOffset, int GreenOffset); */
+
+#define GAMEGUY_H
+#endif

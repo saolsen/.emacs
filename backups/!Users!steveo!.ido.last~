@@ -1,0 +1,332 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/steveo/dev/groundwork/rex/src/rex/" . "clients/")
+ ("/Users/steveo/dev/groundwork/rex/src/" . "rex/")
+ ("/Users/steveo/dev/groundwork/rex/" . "src/")
+ ("/Users/steveo/Dropbox/cinder/gameguy/" . "src/")
+ ("/Users/steveo/dev/steveindusteves/" . "docs/")
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/apps/myApps/firsttest/" . "src/")
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/apps/myApps/" . "firsttest/")
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/apps/" . "myApps/")
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/" . "apps/")
+ ("/Users/steveo/Downloads/" . "sBBS-0.02/")
+ ("/Users/steveo/dev/github/gameguy/p5/" . "addons/")
+ ("/Users/steveo/dev/github/gameguy/" . "p5/")
+ ("/Users/steveo/dev/groundwork/the-claw/src/authentication/" . "settings/")
+ ("/Users/steveo/dev/groundwork/the-claw/src/" . "authentication/")
+ ("/Users/steveo/dev/groundwork/the-claw/" . "src/")
+ ("/Users/steveo/Dropbox/polycode/gameguy/" . "PolycodeTemplate/")
+ ("/Users/steveo/Dropbox/polycode/" . "gameguy/")
+ ("/Users/steveo/Dropbox/cinder/GoupLabs/" . "src/")
+ ("/Users/steveo/Dropbox/cinder/" . "gameguy/")
+ ("/Users/steveo/dev/other/cthehardway/" . "lcthw-book/")
+ ("/Users/steveo/.emacs.d/" . "el-get/")
+ ("/Users/steveo/dev/other/tryagain/src/cljs/" . "tryagain/")
+ ("/Users/steveo/dev/other/tryagain/src/" . "cljs/")
+ ("/Users/steveo/dev/other/tryagain/" . "src/")
+ ("/Users/steveo/dev/github/rockets/src/clj/" . "rockets/")
+ ("/Users/steveo/dev/github/rockets/env/dev/cljs/" . "rockets/")
+ ("/Users/steveo/dev/github/rockets/env/dev/" . "cljs/")
+ ("/Users/steveo/dev/github/rockets/env/" . "dev/")
+ ("/Users/steveo/dev/other/test-it/src/" . "test_it/")
+ ("/Users/steveo/dev/other/test-it/" . "src/")
+ ("/Users/steveo/dev/other/" . "cthehardway/")
+ ("/Users/steveo/dev/github/rockets/resources/public/" . "js/")
+ ("/Users/steveo/dev/github/rockets/resources/" . "public/")
+ ("/Users/steveo/dev/groundwork/GWclient/" . "gwclient/")
+ ("/Users/steveo/dev/github/progeny/progeny/" . "private/")
+ ("/Users/steveo/dev/github/progeny/" . "progeny/")
+ ("/Users/steveo/dev/github/progeny/src/cljs/" . "progeny/")
+ ("/Users/steveo/dev/github/progeny/src/" . "cljs/")
+ ("/Users/steveo/dev/github/rockets/src/cljs/" . "rockets/")
+ ("/Users/steveo/dev/github/rockets/src/" . "rockets/")
+ ("/Users/steveo/dev/github/rockets/" . "src/")
+ ("/Users/steveo/dev/github/" . "gameguy/")
+ ("/Users/" . "steveo/")
+ ("/Users/steveo/Dropbox/unity/lsystems/Assets/Clojure/" . "Scripts/")
+ ("/Users/steveo/Dropbox/unity/lsystems/Assets/" . "Clojure/")
+ ("/Users/steveo/Dropbox/unity/lsystems/" . "Assets/")
+ ("/Users/steveo/Dropbox/unity/" . "lsystems/")
+ ("/Users/steveo/Dropbox/" . "cinder/")
+ ("/Users/steveo/" . "Dropbox/")
+ ("/Users/steveo/dev/groundwork/team-docs/" . "team-members/")
+ ("/Users/steveo/dev/groundwork/" . "GWclient/")
+ ("/Users/steveo/dev/" . "github/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/steveo/dev/github/gameguy/"
+ "/Users/steveo/dev/groundwork/GWclient/gwclient/"
+ "/Users/steveo/dev/groundwork/rex/src/rex/clients/"
+ "/Users/steveo/dev/groundwork/rex/src/rex/"
+ "/Users/steveo/dev/groundwork/GWclient/"
+ "/Users/steveo/dev/groundwork/GWclient/libraries/"
+ "/Users/steveo/Dropbox/cinder/gameguy/src/"
+ "/Users/steveo/dev/other/cthehardway/"
+ "/Users/steveo/dev/other/cthehardway/lcthw-book/"
+ "/Users/steveo/.emacs.d/"
+ "/Users/steveo/Downloads/sBBS-0.02/"
+ "/Users/steveo/dev/groundwork/GWclient/examples/"
+ "/Users/steveo/dev/steveindusteves/docs/"
+ "/Users/steveo/Downloads/of_v0.8.4_osx_release/apps/myApps/firsttest/src/"
+ "/Users/steveo/dev/github/gameguy/p5/first_try/"
+ "/Users/steveo/"
+ "/Users/steveo/Dropbox/cinder/gameguy/"
+ "/Users/steveo/dev/github/csperiments/"
+ "/Users/steveo/dev/groundwork/the-claw/src/authentication/settings/"
+ "/Users/steveo/dev/github/rockets/src/rockets/"
+ "/Users/steveo/dev/groundwork/authentication/"
+ "/Users/steveo/Dropbox/polycode/gameguy/"
+ "/Users/steveo/Dropbox/polycode/gameguy/PolycodeTemplate/"
+ "/Users/steveo/dev/other/stevesgame/"
+ "/Users/steveo/dev/other/Polycode/"
+ "/Users/steveo/Dropbox/cinder/GoupLabs/src/"
+ "/Users/steveo/dev/github/rockets/"
+ "/Users/steveo/dev/github/rockets/styles/"
+ "/Users/steveo/dev/other/handmade/"
+ "/Users/steveo/.emacs.d/el-get-init/"
+ "/Users/steveo/.emacs.d/el-get-user/"
+ "/Users/steveo/dev/other/chickentest/"
+ "/Users/steveo/.lein/"
+ "/Users/steveo/dev/groundwork/www/"
+ "/Users/steveo/dev/github/rockets/src/cljs/rockets/"
+ "/Users/steveo/dev/other/tryagain/src/cljs/tryagain/"
+ "/Users/steveo/dev/other/test-it/src/test_it/"
+ "/Users/steveo/dev/github/rockets/src/clj/rockets/"
+ "/Users/steveo/dev/github/rockets/env/dev/cljs/rockets/"
+ "/Users/steveo/dev/github/rockets/resources/public/js/"
+ "/Users/steveo/dev/github/rockets/resources/"
+ "/Users/steveo/.julia/"
+ "/Users/steveo/dev/github/progeny/progeny/private/"
+ "/Users/steveo/dev/github/progeny/"
+ "/Users/steveo/dev/github/progeny/src/cljs/progeny/"
+ "/Users/steveo/dev/github/Admiral/"
+ "/Users/steveo/Dropbox/unity/lsystems/Assets/Clojure/Scripts/"
+ "/Users/steveo/bin/"
+ "/Users/steveo/dev/groundwork/hamm/"
+ "/Users/steveo/dev/groundwork/auth/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "platformer.c"
+ "client.py"
+ "events.py"
+ "hamm.py"
+ "app.py"
+ "sdl_gameguy.c"
+ "gameguy.c"
+ "test.py"
+ "setup.py"
+ "server.py"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/steveo/dev/github/gameguy/" (21648 49452 0 0) "weird_gradiant.c" "triangle.c" "TODO.org" "sdl_gameguy.c" "rockets.c" "rendertests.dSYM/" "rendertests.c" "rendertests" "README.md" "platformer.dSYM/" "platformer.c" "platformer" "opengl_test.c" "opengl_notes.org" "Makefile" "isometric.dSYM/" "isometric.c" "isometric" "gameguy.h" "gameguy.dSYM/" "gameguy.c" "gameguy" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/" (21649 43272 0 0) "VirtualBox VMs/" "testme.c" "ragdoll.rkt" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "init.el" "groundwork/" "footest.rkt" "foo.rkt" "envs/" "Dropbox/" "Downloads/" "Documents/" "dev/" "Desktop/" "ClionProjects/" "CL-138.2344_steveo_18.11.2014_14.00.14.zip" "CL-138.2344_steveo_16.11.2014_16.23.00.zip" "bin/" "Applications/" ".zshrc-e" ".zshrc" ".zsh_history" ".zsh-update" ".zcompdump-Stephen’s MacBook Pro-5.0.5" ".zcompdump-Stephen’s MacBook Pro-5.0.2" ".zcompdump-Stephen’s MacBook Pro (4)-5.0.5" ".zcompdump-Stephen’s MacBook Pro (2)-5.0.5" ".wapi/" ".viminfo" ".vagrant.d/" ".Trash/" ".subversion/" ".ssh/" ".sqlite_history" ".rstudio-desktop/" ".Rhistory" ".Rapp.history" ".psql_history" ".pip/" ".oh-my-zsh/" ".npm/" ".node-gyp/" ".netrc" ".mono/" ".matplotlib/" ".m2/" ".local/" ".lldb/" ".lein/" ".julia_history" ".julia/" ".ipython/" ".inkscape-etc/" ".ido.last~" ".ido.last" ".heroku/" ".gitconfig" ".gem/" ".emacs.d/" ".DS_Store" ".dropbox/" ".csi_history" ".consul/" ".config/" ".clion10/" ".CFUserTextEncoding" ".cert_store" ".cache/" ".boot2docker/" ".bash_history" ".aws/" ".android/" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/rex/src/rex/" (21648 47668 0 0) "server.py" "clients/" "app.pyc" "app.py" "__init__.py" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/GWclient/gwclient/" (21647 22836 0 0) "client.pyc" "client.py" "__init__.pyc" "__init__.py" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/" (21648 36747 0 0) "www/" "the-claw/" "team-docs/" "rex/" "pycharm_test/" "hamm/" "GWproperties/" "GWclient/" "events-app/" "donations-frontend-demo/" "db.sqlite3" "chef-repo/" "authentication/" "auth_server/" "auth/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/rex/src/rex/clients/" (21648 36070 0 0) "hamm.pyc" "hamm.py" "events.py" "__init__.pyc" "__init__.py" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/GWclient/" (21647 22836 0 0) "test_server.py" "test.py" "setup.py" "README.md" "Makefile" "libraries/" "gwclient.egg-info/" "gwclient/" "examples/" "dist/" "build/" ".idea/" ".git/" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/rex/src/" (21647 17450 0 0) "rex/" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/rex/" (21647 17445 0 0) "src/" ".git/" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/GWclient/libraries/" (21647 15420 0 0) "hamm.py" ".#hamm.py" "#hamm.py#" "../" "./")
+
+ ("/Users/steveo/Dropbox/cinder/gameguy/src/" (21644 50438 0 0) "gameguyApp.cpp" "../" "./")
+
+ ("/Users/steveo/Dropbox/" (21640 30589 0 0) "YNAB/" "xcode/" "VRPigeon0801.avi" "Video/" "untitled folder/" "unreal/" "unity/" "Titanic.nb" "thatsmyjam.gif" "TESTPAGE_files/" "TESTPAGE.html" "steveo/" "steps/" "spell/" "sounds/" "sicp-info/" "shaders/" "sfx/" "scripts/" "Screenshots/" "Screenshot 2014-02-24 11.31.57.png" "Saves/" "rsa/" "Rockets.zip" "Rockets/" "resume.pdf" "resume.md" "Remember/" "ranger_racket.png" "python/" "Public/" "polycode/" "pokesteve.jpg" "Pics/" "pgp.dmg" "pdfs/" "papers/" "others" "oldYNAB/" "musteq/" "monkeyspace_final.key" "monkeyspace.key" "meshs/" "mccarthy.jpg" "mathematica-learning.zip" "marksy/" "maratis_test.mproj" "maps/" "lua_av/" "love/" "lisphackers.epub" "life stuff.numbers" "Library.papers3/" "levels/" "jme/" "Icon
+" "groundwork/" "goup.zip" "goup/" "GEB/" "fonts/" "expenses.numbers" "EulerProblems.nb" "ESLII_print10.pdf" "Documents/" "Dinosaurs/" "DataScienceWeekly-DataScientistInterviews-Vol1-April2014.pdf" "Computational Beauty of Nature/" "cinder/" "Camera Uploads/" "backup/" "Audio/" "Apps/" "agency-wolf-0.1.0-SNAPSHOT-standalone.jar" "1Password.agilekeychain/" "01b - SFX EE Expenses/" ".ynabSettings.yroot" ".ws.agile.1Password.settings" ".Papers3.syncsettings" ".DS_Store" ".dropbox.cache/" ".dropbox" "../" "./")
+
+ ("/Users/steveo/.emacs.d/" (21642 6985 0 0) "projectile-bookmarks.eld" "places" "init.el~" "init.el" "elpa/" "el-get-user/" "el-get-init/" "el-get/" "backups/" "auto-save-list/" "ac-comphist.dat" "../" "./")
+
+ ("/Users/steveo/.emacs.d/el-get/" (21643 23656 0 0) "solarized-emacs/" "skewer-mode/" "simple-httpd/" "s/" "rainbow-delimiters/" "racket-mode/" "queue/" "projectile/" "popup/" "pkg-info/" "paredit/" "package/" "multi-term/" "markdown-mode/" "magit/" "loc-changes/" "leuven-theme/" "js2-mode/" "icomplete+/" "git-modes/" "fuzzy/" "exec-path-from-shell/" "epl/" "el-get/" "dash/" "company-mode/" "color-theme-tangotango/" "color-theme/" "clojure-mode/" "cljsbuild-mode/" "clang-completion-mode/" "cl-lib/" "cider/" "auto-complete/" "ack-and-a-half/" "ac-js2/" ".status.el" ".loaddefs.el~" ".loaddefs.elc" ".loaddefs.el" "../" "./")
+
+ ("/Users/steveo/.emacs.d/el-get/loc-changes/" (21643 23657 0 0) "THANKS" "test/" "README.md" "README" "NEWS" "Makefile.am" "make-check-filter.rb" "loc-changes.el" "install-from-git.sh" "INSTALL" "elisp-comp" "COPYING" "configure.ac" "common.mk" "Carton" "autogen.sh" "AUTHORS" ".travis.yml" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/steveo/Dropbox/unity/lsystems/Assets/Clojure/Scripts/" (21585 12909 0 0) "turtle_parser.clj.meta" "turtle_parser.clj" "turtle_graphics.clj.meta" "turtle_graphics.clj" "snoozle.clj.meta" "snoozle.clj" "README.txt.meta" "README.txt" "lsystems.clj.meta" "lsystems.clj" "import_hydrate.clj.meta" "import_hydrate.clj" "demo.clj.meta" "demo.clj" "#lsystems.clj#.meta" "#lsystems.clj#" "#lsystem_parser.clj#.meta" "#lsystem_parser.clj#" "../" "./")
+
+ ("/Users/steveo/dev/other/cthehardway/" (21640 35947 0 0) "untitled folder/" "testshit.dSYM/" "testshit.c" "testshit" "test.db" "test.c" "Makefile" "lcthw-book/" "kyle.dSYM/" "kyle.c" "kyle" "ex9.dSYM/" "ex9.c" "ex9" "ex8.dSYM/" "ex8.c" "ex8" "ex6.c" "ex5.dSYM/" "ex5.c" "ex5" "ex3.dSYM/" "ex3.c" "ex3" "ex18.dSYM/" "ex18.c" "ex18" "ex17.dSYM/" "ex17.c" "ex17" "ex15.dSYM/" "ex15.c" "ex15" "ex14.dSYM/" "ex14.c" "ex14" "ex12.dSYM/" "ex12.c" "ex12" "ex10.dSYM/" "ex10.c" "ex10" "ex1.dSYM/" "ex1.c" "CMakeLists.txt" ".idea/" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/" (21581 35341 0 0) "steveo/" "Shared/" "Guest/" ".localized" "../" "./")
+
+ ("/Users/steveo/dev/other/" (21625 4618 0 0) "wordcount/" "tryagain/" "test_py/" "test-it/" "stevesgame/" "repl-sublimetext/" "react-art/" "pypy/" "Polycode/" "pixie/" "pict3d/" "ml/" "metapict/" "julia/" "handmade/" "flask-openid/" "femtolisp/" "externals/" "cthehardway/" "chickentest/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/groundwork/" (21582 26680 0 0) "auth/" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/GWclient/examples/" (21638 13894 0 0) "testing.py" "Makefile" "hamm.pyc" "hamm.py" "__init__.pyc" "__init__.py" "../" "./")
+
+ ("/Users/steveo/Downloads/sBBS-0.02/" (21637 55631 0 0) "post.h" "main.cpp" "../" "./")
+
+ ("/Users/steveo/Downloads/" (21637 55632 0 0) "z3-4.3.3.591f6d096f43-x64-osx-10.9.2.zip" "z3-4.3.3.591f6d096f43-x64-osx-10.9.2/" "YNAB4_LiveCaptive_4.3.655.dmg" "WorkSpaces.pkg" "webplayer-mini.dmg" "vlc-2.1.5.dmg" "Viscosity 1.5.2.dmg" "VirtualBox-4.3.18-96516-OSX.dmg" "valgrind-3.10.0.tar.bz2" "vagrant_1.6.5.dmg" "UnrealEngine-1.8.2-2335841.dmg" "unity-4.5.5.dmg" "ubuntu-14.04.1-server-amd64.iso" "Transmission-2.84.dmg" "train.csv" "TODO.org" "The.Wolf.of.Wall.Street.2013.DVDSCR.XviD-BiDA/" "stmt_y2.qif" "stephen.ovpn" "steam.dmg" "SpotifyInstaller.zip" "SDL2-2.0.3.dmg" "Screenhero.dmg" "sBBS-0.02.tar.gz" "sBBS-0.02/" "RTJ2.zip" "RTJ2/" "RStudio-0.98.1078.dmg" "romke-django_openid_provider-9c9ad8441921.zip" "romke-django_openid_provider-9c9ad8441921/" "racket-6.1.1.3-x86_64-macosx.dmg" "racket-6.1-x86_64-macosx.dmg" "R-3.1.1-mavericks.pkg" "qt-opensource-mac-x64-1.6.0-5-online.dmg" "pycharm-professional-3.4.1.dmg" "pycharm-community-3.4.1.dmg" "pulsar-architecture-draft.pdf" "pulsar-architecture-draft (1).pdf" "Protype2.zip" "Protype/" "processing-2.2.1-macosx.zip" "Postgres-9.3.5.1.zip" "Postgres-9.3.5.1 (1).zip" "Polycode.zip" "Polycode.app/" "Polycode 2.app/" "Polycode (1).zip" "PlanetCute PNG.zip" "PlanetCute PNG/" "Pitch.Perfect.2012.DVDRip.XviD-SPARKS/" "Pitch Perfect (2012) 720p BRrip_scOrp_sujaidr/" "Pitch Perfect (2012)/" "papers_323_162.dmg" "p5.zip" "p5 2/" "p5/" "of_v0.8.4_osx_release.zip" "of_v0.8.4_osx_release/" "Oculus (2013) [1080p]/" "obs-0.6.4-installer.dmg" "ngrok.zip" "ngrok" "mrdoob-three.js-r69-0-gca14c79.zip" "mrdoob-three.js-ca14c79/" "Minecraft.dmg" "MeshLabMac_v133.dmg" "Mathematica_10.0.0_OSX.dmg" "linux_day_011.tar.gz" "linux_day_004.tar.gz" "linux_day_004/" "linux_day_003.tar.gz" "linux_day_003 2/" "linux_day_003 (1).tar.gz" "linux_day_003/" "linux_day_002.tar.gz" "linux_day_002/" "julia-0.4.0-0fe184e0c0-osx.dmg" "jdk-8u25-macosx-x64.dmg" "jdk-8u25-macosx-x64-2.dmg" "JavaForOSX2014-001.dmg" "iTerm2_v2_0.zip" "iTerm.app/" "Install360Controller_0.14_yosemite_beta_unofficial.pkg" "Install Spotify.app/" "ideaIC-13.1.5.dmg" "HMA-Pro-VPN-2.1.0.1.pkg" "HMA-Pro-VPN-2.1.0.0.pkg" "heroku-toolbelt.pkg" "handmade_hero_000_source.zip" "handmade_hero_000_source/" "GROUNDWORKS-UHC-Enrollment_Form_for_NY_2-50.pdf" "Goup-0.8.zip" "Goup-0.8/" "Flux34-3.zip" "flask-oauthlib-master.zip" "Firefox 33.1.1.dmg" "export.ofx" "export (1).ofx" "Evernote_RELEASE_6.0.1_451119.dmg" "Emacs-24.4-universal.dmg" "Emacs-24.3-universal-10.6.8.dmg" "DualContourStarter.zip" "DualContourStarter/" "DropboxInstaller.dmg" "download (6)" "download (5)" "download (4)" "download (3)" "download (2)" "download (1)" "download" "Doctor.Who.2005.S08E09.Flatline.720p.HDTV.x265/" "django-openid-consumer-0.1.1.tar.gz" "django-openid-consumer-0.1.1/" "credentials.csv" "CocoaSplit_1.9.4.zip" "CocoaSplit.app/" "CLion-138.2344.17.dmg" "cinder_0.8.6_mac.zip" "cinder_0.8.6_mac/" "chefdk-0.3.0-1.dmg" "Bridesmaids.2011.UNRATED.1080p.BluRay.x264.anoXmous/" "Boot2Docker-1.3.0.pkg" "Arcadia-develop.zip" "About Downloads.lpdf/" "[kickass.so]pitch.perfect.2012.720p.brrip.x264.yify.torrent" "[ UsaBit.com ] - Moneyball 2011 BRRip XviD-FTW/" "360ControllerInstall.dmg" "21st_Century_C.pdf" "1Password-4.4.3.zip" "02_getting_an_image_on_the_screen.zip" "02_getting_an_image_on_the_screen/" "0.4.1_darwin_amd64.zip" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/team-docs/team-members/" (21577 27246 0 0) "Tyler_Gaw.md" "Stephen_Olsen.md~" "Stephen_Olsen.md" "Sam_Sach.md" "Pat_ONeill.md" "Nick_Ballenger.md" "Morgan_Reagan.md" "Kyle_Stoneman.md" "Chris_Schomaker.md" "Blithe_Rocher.md" "Benjamin_W_Smith.md" "assets/" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/hamm/" (21632 40925 0 0) "Vagrantfile" "tests/" "src/" "setup.py" "setup.cfg" "requirements.txt" "README.md" "provisioning/" "MANIFEST.in" "Makefile" "docs/" ".travis.yml" ".idea/" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/steveindusteves/docs/" (21632 48577 0 0) "Launch.md" "Business.md" ".git/" "../" "./")
+
+ ("/Users/steveo/dev/steveindusteves/" (21632 43582 0 0) "docs/" "../" "./")
+
+ ("/Users/steveo/dev/" (21632 43578 0 0) "steveindusteves/" "other/" "kaggle/" "groundwork/" "github/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/auth/" (21565 42879 0 0) "options.md" "auth/" ".idea/" ".git/" "../" "./")
+
+ ("/Users/steveo/dev/other/cthehardway/lcthw-book/" (21625 5470 0 0) "README.md" "learn-c-the-hard-waypa3.txt" "learn-c-the-hard-waypa2.txt" "learn-c-the-hard-waypa1.txt" "learn-c-the-hard-wayli3.txt" "learn-c-the-hard-wayli2.txt" "learn-c-the-hard-wayli1.txt" "learn-c-the-hard-waych9.txt" "learn-c-the-hard-waych8.txt" "learn-c-the-hard-waych7.txt" "learn-c-the-hard-waych6.txt" "learn-c-the-hard-waych55.txt" "learn-c-the-hard-waych54.txt" "learn-c-the-hard-waych53.txt" "learn-c-the-hard-waych52.txt" "learn-c-the-hard-waych51.txt" "learn-c-the-hard-waych50.txt" "learn-c-the-hard-waych5.txt" "learn-c-the-hard-waych49.txt" "learn-c-the-hard-waych48.txt" "learn-c-the-hard-waych47.txt" "learn-c-the-hard-waych46.txt" "learn-c-the-hard-waych45.txt" "learn-c-the-hard-waych44.txt" "learn-c-the-hard-waych43.txt" "learn-c-the-hard-waych42.txt" "learn-c-the-hard-waych41.txt" "learn-c-the-hard-waych40.txt" "learn-c-the-hard-waych4.txt" "learn-c-the-hard-waych39.txt" "learn-c-the-hard-waych38.txt" "learn-c-the-hard-waych37.txt" "learn-c-the-hard-waych36.txt" "learn-c-the-hard-waych35.txt" "learn-c-the-hard-waych34.txt" "learn-c-the-hard-waych33.txt" "learn-c-the-hard-waych32.txt" "learn-c-the-hard-waych31.txt" "learn-c-the-hard-waych30.txt" "learn-c-the-hard-waych3.txt" "learn-c-the-hard-waych29.txt" "learn-c-the-hard-waych28.txt" "learn-c-the-hard-waych27.txt" "learn-c-the-hard-waych26.txt" "learn-c-the-hard-waych25.txt" "learn-c-the-hard-waych24.txt" "learn-c-the-hard-waych23.txt" "learn-c-the-hard-waych22.txt" "learn-c-the-hard-waych21.txt" "learn-c-the-hard-waych20.txt" "learn-c-the-hard-waych2.txt" "learn-c-the-hard-waych19.txt" "learn-c-the-hard-waych18.txt" "learn-c-the-hard-waych17.txt" "learn-c-the-hard-waych16.txt" "learn-c-the-hard-waych15.txt" "learn-c-the-hard-waych14.txt" "learn-c-the-hard-waych13.txt" "learn-c-the-hard-waych12.txt" "learn-c-the-hard-waych11.txt" "learn-c-the-hard-waych10.txt" "learn-c-the-hard-waych1.txt" "learn-c-the-hard-way.txt" "index.txt" ".git/" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/authentication/" (21629 58497 0 0) "Vagrantfile" "tests/" "test_js_client/" "static/" "src/" "setup.py" "setup.cfg" "scssReport.xml" "schema.sql" "requirements.txt" "redirector/" "README.md" "provisioning/" "package.json" "node_modules/" "MANIFEST.in" "manage.py" "Makefile" "gulpfile.js" "docs/" "deps/" "db.sqlite3" "bower_components/" "bower.json" "authentication/" ".travis.yml" ".jshintrc" ".jscsrc" ".idea/" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/github/csperiments/" (21631 23994 0 0) "Makefile" "lsystem.c" ".git/" "../" "./")
+
+ ("/Users/steveo/dev/github/" (21631 32251 0 0) "rockets-old/" "rockets/" "progeny/" "precedural/" "goup-labs/" "gameguy/" "csperiments/" "Admiral/" "714afa527343c1e32c5e/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/apps/myApps/firsttest/src/" (21627 42039 0 0) "ofApp.h" "ofApp.cpp" "main.cpp" "../" "./")
+
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/apps/myApps/firsttest/" (21627 41347 0 0) "src/" "Project.xcconfig" "openFrameworks-Info.plist" "Makefile" "firsttest.xcodeproj/" "config.make" "bin/" "addons.make" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/apps/myApps/" (21627 41332 0 0) "firsttest/" "emptyExample/" "../" "./")
+
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/apps/" (21519 5972 0 0) "myApps/" "../" "./")
+
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/examples/" (21519 5972 0 0) "video/" "utils/" "sound/" "math/" "gui/" "graphics/" "gl/" "events/" "empty/" "communication/" "addons/" "3d/" "../" "./")
+
+ ("/Users/steveo/Downloads/of_v0.8.4_osx_release/" (21519 5972 0 0) "scripts/" "README.md" "projectGenerator_osx/" "other/" "LICENSE.md" "libs/" "INSTALL.md" "export/" "examples/" "docs/" "CHANGELOG.md" "apps/" "addons/" "../" "./")
+
+ ("/Users/steveo/dev/github/gameguy/p5/first_try/" (21631 26620 0 0) "sketch.js" "index.html" ".DS_Store" ".#sketch.js" "#sketch.js#" "../" "./")
+
+ ("/Users/steveo/dev/github/gameguy/p5/addons/" (21618 33865 0 0) "p5.sound.js" "p5.dom.js" "../" "./")
+
+ ("/Users/steveo/Dropbox/cinder/gameguy/" (21631 24761 0 0) "xcode/" "src/" "resources/" "Makefile" "include/" "blocks/" "assets/" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/Dropbox/cinder/" (21631 20894 0 0) "VoxelTest/" "Test/" "Lsystems/" "IPadTest/" "GoupLabs/" "gameguy/" "Flocking/" "FirstTest/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/src/rockets/" (21629 5802 0 0) "scene.cljs" "rules.cljs" "physics.cljs" "core.cljs" "../" "./")
+
+ ("/Users/steveo/dev/github/gameguy/p5/" (21629 62400 0 0) "p5.min.js" "p5.js" "first_try/" "addons/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/the-claw/" (21629 61575 0 0) "Vagrantfile" "tests/" "static/" "src/" "setup.py" "setup.cfg" "requirements.txt" "README.md" "provisioning/" "package.json" "MANIFEST.in" "manage.py" "Makefile" "gulpfile.js" "docs/" "deps/" "db.sqlite3" "bower.json" ".travis.yml" ".jshintrc" ".jscsrc" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/the-claw/src/authentication/" (21629 61395 0 0) "wsgi.pyc" "wsgi.py" "views.py" "urls.py" "templates/" "settings/" "quick_cards/" "profile/" "decorators.py" "__init__.pyc" "__init__.py" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/the-claw/src/authentication/settings/" (21629 61395 0 0) "test.py" "local.pyc" "local.py" "base.pyc" "base.py" "__init__.pyc" "__init__.py" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/the-claw/src/" (21629 60969 0 0) "the_claw.egg-info/" "authentication/" "../" "./")
+
+ ("/Users/steveo/dev/groundwork/www/" (21621 5387 0 0) "www-image-packer.json" "www/" "static/" "setup.py" "scssReport.xml" "scripts/" "requirements.txt" "redirector/" "README.md" "package.json" "node_modules/" "MANIFEST.in" "manage.py" "Makefile" "gulpfile.js" "groundwork_auth.pyc" "donate/" "db.sqlite3" "cookbook/" "bower_components/" "bower.json" ".travis.yml" ".jshintrc" ".jscsrc" ".idea/" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/Dropbox/cinder/GoupLabs/src/" (21621 12341 0 0) "GoupLabsApp.cpp" "Goup.cpp" "../" "./")
+
+ ("/Users/steveo/dev/other/stevesgame/" (21622 17115 0 0) "Makefile" "main.cpp" "HelloPolycodeApp.h" "HelloPolycodeApp.cpp" "../" "./")
+
+ ("/Users/steveo/Dropbox/polycode/gameguy/PolycodeTemplate/" (21623 60411 0 0) "PolycodeTemplateAppDelegate.mm" "PolycodeTemplateAppDelegate.h" "PolycodeTemplateApp.cpp" "main_icon.icns" "main.m" "GGApp.mm" "GGApp.h" "GameGuy-Prefix.pch" "GameGuy-Info.plist" "en.lproj/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/Dropbox/polycode/gameguy/" (21622 54280 0 0) "PolycodeTemplate/" "GameGuy.xcodeproj/" "build/" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/Applications/" (21621 11604 0 0) "YNAB 4.app/" "Xcode.app/" "WorkSpaces.app/" "VLC.app/" "Viscosity.app/" "VirtualBox.app/" "Vagrant/" "Utilities/" "Unreal Engine.app/" "Unity/" "Twitter.app/" "Transmission.app/" "Time Machine.app/" "TextEdit.app/" "System Preferences.app/" "SyphonInject.app/" "Stickies.app/" "Steam.app/" "Spotify.app/" "Slack.app/" "Screenhero.app/" "Safari.app/" "RStudio.app/" "Reminders.app/" "Racket v6.1.1.3/" "R.app/" "QuickTime Player.app/" "PyCharm.app/" "PyCharm CE.app/" "Processing.app/" "Preview.app/" "Postgres.app/" "Photo Booth.app/" "Papers.app/" "Pages.app/" "OBS.app/" "Numbers.app/" "Notes.app/" "Mission Control.app/" "Minecraft.app/" "Messages.app/" "Mathematica.app/" "Maps.app/" "Mail.app/" "Launchpad.app/" "Keynote.app/" "Joystick Mapper.app/" "iTunes.app/" "iPhoto.app/" "IntelliJ IDEA 13 CE.app/" "iMovie.app/" "Image Capture.app/" "iBooks.app/" "HMA! Pro VPN.app/" "googlechrome.dmg" "Google Chrome.app/" "GarageBand.app/" "Game Center.app/" "Font Book.app/" "Firefox.app/" "FaceTime.app/" "Evernote.app/" "Emacs.app/" "DVD Player.app/" "Dropbox.app/" "Dictionary.app/" "Dashboard.app/" "Contacts.app/" "CLion EAP.app/" "Chess.app/" "Calendar.app/" "Calculator.app/" "Caffeine.app/" "boot2docker.app/" "Automator.app/" "App Store.app/" "1Password 5.app/" ".localized" ".DS_Store" "../" "./")
+
+ ("/Applications/Xcode.app/" (21586 25789 0 0) "Contents/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/" (21586 25788 0 0) "XPCServices/" "version.plist" "SharedFrameworks/" "Resources/" "PlugIns/" "PkgInfo" "OtherFrameworks/" "MacOS/" "Library/" "Info.plist" "Frameworks/" "Developer/" "Applications/" "_MASReceipt/" "_CodeSignature/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/" (21569 48565 0 0) "usr/" "Tools/" "Toolchains/" "System/" "Platforms/" "Makefiles/" "Library/" "Documentation/" "Applications/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/" (21569 47340 0 0) "MacOSX.platform/" "iPhoneSimulator.platform/" "iPhoneOS.platform/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/" (21569 47956 0 0) "version.plist" "ResourceRules.plist" "OS X.icns" "Info.plist" "Entitlements.plist" "Developer/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/" (21569 47956 0 0) "usr/" "SDKs/" "Library/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/" (21551 6465 0 0) "MacOSX10.9.sdk/" "MacOSX10.10.sdk/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/" (21550 30598 0 0) "usr/" "System/" "SDKSettings.plist" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/" (21534 23515 0 0) "Library/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/" (21550 30613 0 0) "PrivateFrameworks/" "Printers/" "Frameworks/" "CoreServices/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/" (21550 30658 0 0) "WebKit.framework/" "vmnet.framework/" "VideoToolbox.framework/" "VideoDecodeAcceleration.framework/" "vecLib.framework/" "TWAIN.framework/" "Tk.framework/" "Tcl.framework/" "SystemConfiguration.framework/" "System.framework/" "SyncServices.framework/" "StoreKit.framework/" "SpriteKit.framework/" "Social.framework/" "ServiceManagement.framework/" "SecurityInterface.framework/" "SecurityFoundation.framework/" "Security.framework/" "ScriptingBridge.framework/" "Scripting.framework/" "ScreenSaver.framework/" "SceneKit.framework/" "Ruby.framework/" "QuickTime.framework/" "QuickLook.framework/" "QuartzCore.framework/" "Quartz.framework/" "QTKit.framework/" "Python.framework/" "PubSub.framework/" "PreferencePanes.framework/" "PCSC.framework/" "OSAKit.framework/" "OpenGL.framework/" "OpenDirectory.framework/" "OpenCL.framework/" "OpenAL.framework/" "NotificationCenter.framework/" "NetworkExtension.framework/" "NetFS.framework/" "MultipeerConnectivity.framework/" "module.map" "Message.framework/" "MediaToolbox.framework/" "MediaLibrary.framework/" "MediaAccessibility.framework/" "MapKit.framework/" "LocalAuthentication.framework/" "LDAP.framework/" "LatentSemanticMapping.framework/" "Kernel.framework/" "Kerberos.framework/" "JavaVM.framework/" "JavaScriptCore.framework/" "JavaFrameEmbedding.framework/" "IOSurface.framework/" "IOKit.framework/" "IOBluetoothUI.framework/" "IOBluetooth.framework/" "InstantMessage.framework/" "InstallerPlugins.framework/" "InputMethodKit.framework/" "IMServicePlugIn.framework/" "ImageIO.framework/" "ImageCaptureCore.framework/" "ICADevices.framework/" "Hypervisor.framework/" "GSS.framework/" "GLUT.framework/" "GLKit.framework/" "GameKit.framework/" "GameController.framework/" "FWAUserLib.framework/" "Foundation.framework/" "ForceFeedback.framework/" "FinderSync.framework/" "ExceptionHandling.framework/" "EventKit.framework/" "DVDPlayback.framework/" "DVComponentGlue.framework/" "DrawSprocket.framework/" "DiskArbitration.framework/" "DiscRecordingUI.framework/" "DiscRecording.framework/" "DirectoryService.framework/" "CryptoTokenKit.framework/" "CoreWLAN.framework/" "CoreVideo.framework/" "CoreText.framework/" "CoreTelephony.framework/" "CoreServices.framework/" "CoreMIDIServer.framework/" "CoreMIDI.framework/" "CoreMediaIO.framework/" "CoreMedia.framework/" "CoreLocation.framework/" "CoreGraphics.framework/" "CoreFoundation.framework/" "CoreData.framework/" "CoreBluetooth.framework/" "CoreAuthentication.framework/" "CoreAudioKit.framework/" "CoreAudio.framework/" "Collaboration.framework/" "Cocoa.framework/" "CloudKit.framework/" "CFNetwork.framework/" "Carbon.framework/" "CalendarStore.framework/" "AVKit.framework/" "AVFoundation.framework/" "Automator.framework/" "AudioVideoBridging.framework/" "AudioUnit.framework/" "AudioToolbox.framework/" "ApplicationServices.framework/" "AppleScriptObjC.framework/" "AppleScriptKit.framework/" "AppKitScripting.framework/" "AppKit.framework/" "AGL.framework/" "AddressBook.framework/" "Accounts.framework/" "Accelerate.framework/" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework/" (21586 25753 0 0) "Versions/" "module.map" "Headers/" "Foundation" "../" "./")
+
+ ("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Foundation.framework/Headers/" (21536 57370 0 0) "NSZone.h" "NSXPCConnection.h" "NSXMLParser.h" "NSXMLNodeOptions.h" "NSXMLNode.h" "NSXMLElement.h" "NSXMLDTDNode.h" "NSXMLDTD.h" "NSXMLDocument.h" "NSValueTransformer.h" "NSValue.h" "NSUUID.h" "NSUserScriptTask.h" "NSUserNotification.h" "NSUserDefaults.h" "NSUserActivity.h" "NSURLSession.h" "NSURLResponse.h" "NSURLRequest.h" "NSURLProtocol.h" "NSURLProtectionSpace.h" "NSURLHandle.h" "NSURLError.h" "NSURLDownload.h" "NSURLCredentialStorage.h" "NSURLCredential.h" "NSURLConnection.h" "NSURLCache.h" "NSURLAuthenticationChallenge.h" "NSURL.h" "NSUndoManager.h" "NSUbiquitousKeyValueStore.h" "NSTimeZone.h" "NSTimer.h" "NSThread.h" "NSTextCheckingResult.h" "NSTask.h" "NSString.h" "NSStream.h" "NSSpellServer.h" "NSSortDescriptor.h" "NSSet.h" "NSScriptWhoseTests.h" "NSScriptSuiteRegistry.h" "NSScriptStandardSuiteCommands.h" "NSScriptObjectSpecifiers.h" "NSScriptKeyValueCoding.h" "NSScriptExecutionContext.h" "NSScriptCommandDescription.h" "NSScriptCommand.h" "NSScriptCoercionHandler.h" "NSScriptClassDescription.h" "NSScanner.h" "NSRunLoop.h" "NSRegularExpression.h" "NSRange.h" "NSProxy.h" "NSProtocolChecker.h" "NSPropertyList.h" "NSProgress.h" "NSProcessInfo.h" "NSPredicate.h" "NSPortNameServer.h" "NSPortMessage.h" "NSPortCoder.h" "NSPort.h" "NSPointerFunctions.h" "NSPointerArray.h" "NSPathUtilities.h" "NSOrthography.h" "NSOrderedSet.h" "NSOperation.h" "NSObjectScripting.h" "NSObject.h" "NSObjCRuntime.h" "NSNumberFormatter.h" "NSNull.h" "NSNotificationQueue.h" "NSNotification.h" "NSNetServices.h" "NSMethodSignature.h" "NSMetadataAttributes.h" "NSMetadata.h" "NSMassFormatter.h" "NSMapTable.h" "NSLock.h" "NSLocale.h" "NSLinguisticTagger.h" "NSLengthFormatter.h" "NSKeyValueObserving.h" "NSKeyValueCoding.h" "NSKeyedArchiver.h" "NSJSONSerialization.h" "NSItemProvider.h" "NSInvocation.h" "NSIndexSet.h" "NSIndexPath.h" "NSHTTPCookieStorage.h" "NSHTTPCookie.h" "NSHost.h" "NSHFSFileTypes.h" "NSHashTable.h" "NSGeometry.h" "NSGarbageCollector.h" "NSFormatter.h" "NSFileWrapper.h" "NSFileVersion.h" "NSFilePresenter.h" "NSFileManager.h" "NSFileHandle.h" "NSFileCoordinator.h" "NSExtensionRequestHandling.h" "NSExtensionItem.h" "NSExtensionContext.h" "NSExpression.h" "NSException.h" "NSError.h" "NSEnumerator.h" "NSEnergyFormatter.h" "NSDistributedNotificationCenter.h" "NSDistributedLock.h" "NSDistantObject.h" "NSDictionary.h" "NSDecimalNumber.h" "NSDecimal.h" "NSDebug.h" "NSDateIntervalFormatter.h" "NSDateFormatter.h" "NSDateComponentsFormatter.h" "NSDate.h" "NSData.h" "NSConnection.h" "NSCompoundPredicate.h" "NSComparisonPredicate.h" "NSCoder.h" "NSClassDescription.h" "NSCharacterSet.h" "NSCalendarDate.h" "NSCalendar.h" "NSCache.h" "NSByteOrder.h" "NSByteCountFormatter.h" "NSBundle.h" "NSBackgroundActivityScheduler.h" "NSAutoreleasePool.h" "NSAttributedString.h" "NSArray.h" "NSArchiver.h" "NSAppleScript.h" "NSAppleEventManager.h" "NSAppleEventDescriptor.h" "NSAffineTransform.h" "FoundationErrors.h" "Foundation.h" "../" "./")
+
+ ("/Users/steveo/Dropbox/polycode/" (21622 31917 0 0) "Polycode/" "gameguy/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/other/Polycode/" (21622 14227 0 0) "Tools/" "Toolchain-mingw32.cmake" "Standalone/" "Release/" "README" "Player/" "Modules/" "LICENSE.txt" "IDE/" "Examples/" "Documentation/" "Dependencies/" "Core/" "CMakeLists.txt" "CMake/" "BuildLinux.sh" "BUILD.md" "Build/" "Bindings/" "Assets/" ".idea/" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/Dropbox/cinder/GoupLabs/" (21621 2375 0 0) "xcode/" "src/" "resources/" "include/" "assets/" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/" (21619 34297 0 0) "target/" "styles/" "src/" "rockets.js" "project.clj" "out/" "js/" "index.html" ".travis.yml" ".lein-repl-history" ".lein-env" ".idea/" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/styles/" (21618 12925 0 0) "bourbon/" "all.scss" "all.css" "_reset.scss" "_mixins-variables.scss" "../" "./")
+
+ ("/Users/steveo/.emacs.d/el-get-init/" (21609 22847 0 0) "init-better-defaults.el" "../" "./")
+
+ ("/Users/steveo/dev/other/handmade/" (21609 31085 0 0) "Makefile" "main.dSYM/" "main.cpp~" "main.cpp" "main.c" "main" "foo.scm" ".git/" "#main.cpp#" "../" "./")
+
+ ("/Users/steveo/.emacs.d/el-get-user/" (21609 22655 0 0) "better-defaults.rcp" "../" "./")
+
+ ("/Users/steveo/dev/other/chickentest/" (21609 12838 0 0) "ruickrep.scm" "quickrep.dat" "fib.o" "fib.c" "fib-user.scm" "fib-user" "../" "./")
+
+ ("/Users/steveo/.lein/" (21607 65157 0 0) "self-installs/" "repl-history" "../" "./")
+
+ ("/Users/steveo/dev/other/tryagain/src/cljs/tryagain/" (21608 1297 0 0) "core.cljs" "#core.cljs#" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/src/" (21608 1568 0 0) "rockets/" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/src/cljs/rockets/" (21607 63093 0 0) "core.cljs" "../" "./")
+
+ ("/Users/steveo/dev/other/tryagain/src/cljs/" (21607 64988 0 0) "tryagain/" "../" "./")
+
+ ("/Users/steveo/dev/other/tryagain/src/" (21607 64988 0 0) "cljs/" "clj/" "../" "./")
+
+ ("/Users/steveo/dev/other/tryagain/" (21607 65074 0 0) "target/" "system.properties" "src/" "resources/" "README.md" "project.clj" "Procfile" "LICENSE" "env/" ".lein-repl-history" ".lein-env" ".gitignore" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/src/clj/rockets/" (21606 25405 0 0) "server.clj" "dev.clj" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/src/clj/" (21606 25405 0 0) "rockets/" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/env/dev/cljs/rockets/" (21606 25405 0 0) "dev.cljs" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/env/dev/cljs/" (21606 25405 0 0) "rockets/" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/env/dev/" (21606 25405 0 0) "cljs/" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/env/" (21606 25405 0 0) "prod/" "dev/" "../" "./")
+
+ ("/Users/steveo/dev/other/test-it/" (21606 58021 0 0) "test/" "target/" "src/" "resources/" "README.md" "project.clj" "LICENSE" "doc/" ".gitignore" "../" "./")
+
+ ("/Users/steveo/dev/other/test-it/src/test_it/" (21606 43717 0 0) "core.clj" "../" "./")
+
+ ("/Users/steveo/dev/other/test-it/src/" (21606 43717 0 0) "test_it/" "../" "./")
+
+ ("/Users/steveo/bin/" (21606 27778 0 0) "ngrok" "lein" "irc" "consul" ".DS_Store" "../" "./")
+
+ ("/Users/steveo/dev/github/Admiral/" (21597 33357 0 0) "update.rkt" "systems/" "rule-parser.rkt" "render.rkt" "README.md" "miniKanren/" "gui.rkt" "first-order.rkt" "engine.rkt" "config.rkt" "compiled/" "admiral.rkt" "admiral.org" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/steveo/.julia/" (21601 3594 0 0) "v0.4/" "Make.user" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/resources/" (21606 25405 0 0) "public/" "index.html" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/resources/public/js/" (21606 25659 0 0) "out.js.map" "out/" "app.js" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/src/cljs/" (21606 25405 0 0) "rockets/" "../" "./")
+
+ ("/Users/steveo/dev/github/rockets/resources/public/" (21606 23240 0 0) "js/" "css/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

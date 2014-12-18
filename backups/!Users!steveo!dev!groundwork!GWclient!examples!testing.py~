@@ -1,0 +1,14 @@
+
+
+class StevesService(GwService):
+    app_name = "steve"
+
+    # Return a "request" but don't actuially send it or handle a response.
+    @method 'GET'
+    @route "/steve"
+    def get_steve(self, foo='foo', bar='bar', cat=None):
+        assert cat != None, "You must pass in a cat."
+        return self.get(
+
+    get_steve = Get(foo='foo', bar='bar', cat=None);
+    

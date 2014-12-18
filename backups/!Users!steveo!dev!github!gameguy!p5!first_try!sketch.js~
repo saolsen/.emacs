@@ -1,0 +1,131 @@
+// js2 mode todo:
+// externs, autocomplete, auto refresh browser and maybe a repl
+
+// Takes a rule object of replacements, a seed and the number of iterations.
+function lstep (rules, seed)
+{
+    var output = "";
+    
+    for (var i = 0; i < seed.length; i++) {
+        
+        if(seed [i] in rules) {
+            output += rules[seed[i]];
+        } else {
+            output += seed[i];
+        }
+    }
+
+    return output;
+}
+
+
+function lsystem (rules, seed, n)
+{
+    var str = seed;
+
+    for (var i = 0; i < n; i++) {
+        str = lstep (rules, str);
+    }
+    
+    return str;
+}
+
+
+function draw_system (system, theta, width, height)
+{
+    var position = createVector (0, 0);
+    var direction = createVector (0, 1);
+
+    var tl_x = 0;
+    var tl_y = 0;
+    var br_x = 0;
+    var br_y = 0;
+    
+    var line_points = [];
+    
+    for (var i = 0; i < system.length; i++) {
+
+        // Process character.
+        switch (system[i]) {
+        case "F": {
+            line_points.push(position.x,
+                             position.y,
+                             position.x + direction.x,
+                             position.y + direction.y);
+            position.add(direction);
+            break;
+        }
+        case "f": {
+            position.add(direction);
+            break;
+        }
+        case "+": {
+            direction.rotate(radians(theta));
+            break;
+        }
+        case "-": {
+            direction.rotate(-radians(theta));
+            break;
+        }
+        default: {
+            break;
+        }
+        }
+
+        // Update bounding box.
+        if (position.x < tl_x) {
+             tl_x = position.x;
+        }
+        if (position.y < tl_y) {
+            tl_y = position.y;
+        }
+        if (position.x > br_x) {
+            br_x = position.x;
+        }
+        if (position.y > br_y) {
+            br_y = position.y;
+        }
+    }
+
+    // Calculate bounding box.
+    var bb_width = br_x - tl_x;
+    var bb_height = br_y - tl_y;
+
+    // Calculate scaling factors.
+    var scale_x = width / bb_width;
+    var scale_y = height / bb_height;
+
+    // todo(stephen): do another translate for centering.
+    // Draw!
+    push();
+    translate(-tl_x, -tl_y);
+    for(i = 0; i < line_points.length; i += 4) {
+        line(line_points[i]   * scale_x,
+             line_points[i+1] * scale_y,
+             line_points[i+2] * scale_x,
+             line_points[i+3] * scale_y);
+    }
+    pop();
+    
+}
+
+// Globals.
+var system;
+
+function setup ()
+{
+    createCanvas(500, 500);
+    system = lsystem ({"F": "F+f-FF+F+FF+Ff+FF-f+FF-F-FF-Ff-FFF",
+                       "f": "ffffff"}, "F+F+F+F", 2);
+    //system = lsystem ({"F": "F-F++F+F-F-F"}, "F-F-F-F-F", 4);
+    // system = "FFF-FFF+FFF-FFF";
+    // system = "F-F-F";
+    draw_system (system, 90, 500, 500);
+}
+
+
+function draw ()
+{
+    // put drawing code here
+
+}

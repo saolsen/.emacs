@@ -1,0 +1,198 @@
+/*
+ * Can I avoid the standard library completely?
+ * This is GAMES so linking only against stl2 means
+ * that my game will absolutely work on all the platforms they support!
+ */
+#include <stdlib.h>
+#include <stdbool.h>
+#include <sdl2/sdl.h>
+
+const int BytesPerPixel = 4;
+const int StartingWidth = 640;
+const int StartingHeight = 480;
+
+static SDL_Texture *Texture;
+static void *Pixels;
+static int TextureWidth;
+static int TextureHeight;
+// todo, dude pull notes out into some other file
+
+/*
+ * there are textures which are vram and surfaces which are software render targets
+ * in sdl. Figure out if I want to use that intead of my own pixel memory
+ * hint: prolly
+ * Do I want to follow casey or write real shit?
+ * real shit!
+ *
+ * SDL talk notes!
+ * there is a 2d rendering api, textures, alpha blending, primitives, etc..
+ * maybe start with this renderer for awhile until I want to learn opengl.
+ * gpu backed
+ * vram, then sprites, like a snes. Scale and rotate sprites, no shaders or anything.
+ * use opengl if you need anything more than that.
+ *
+ * touch events look like click events!
+ * there's a thing called dollar gestures for pretrained gestures!
+ * cool!
+ * rockets will probably all render with the 2d rendering api no problem because it's just
+ * sprites.
+ *
+ * timers let you fire timer events, that's neat
+ *
+ * sdl has threading and atomic operations built in!
+ * that is fucking awesome, this is like kids mode for c
+ * but a great thing for making games!
+ *
+ * Performance counters, timers
+ * sdl malloc, sdl everything.
+ *
+ * casey tips, write the usage code first, do a first pass, dont do the interface until later.
+ * will eventuially end up with my own sdl library of stuff and a wrapper of stuff that works
+ * the way I want to work (steve's cinder unity c thingy) and then I can use that.
+ * for now just write it all together before I know how to abstract it.
+ */
+
+// watch blows indie game prototyping video again
+// prototype everything in 2d always because it's way simpler.
+
+void
+RenderWeirdGradient(int BlueOffset, int GreenOffset) {
+  int Pitch = TextureWidth*BytesPerPixel;
+  uint8_t *Row = (uint8_t *)Pixels;
+
+  for(int y = 0; y < TextureHeight; ++y) {
+    uint32_t *Pixel = (uint32_t *)Row;
+    for(int x = 0; x < TextureWidth; ++x) {
+      uint8_t Blue = (x + BlueOffset);
+      uint8_t Green = (y + GreenOffset);
+
+      *Pixel++ = ((Green << 8) | Blue);
+    }
+
+    Row += Pitch;
+  }
+}
+
+void
+SDLResizeTexture(SDL_Renderer *Renderer, int Width, int Height)
+{
+  free(Pixels);
+
+  if (Texture) {
+    SDL_DestroyTexture(Texture);
+  }
+
+  Texture = SDL_CreateTexture(Renderer,
+                              SDL_PIXELFORMAT_ARGB8888,
+                              SDL_TEXTUREACCESS_STREAMING,
+                              Width,
+                              Height);
+  TextureWidth = Width;
+  TextureHeight = Height;
+  Pixels = malloc(Width * Height * BytesPerPixel);
+  /*
+   * NOTE: it's a good idea to ensure Pixels doesn't return NULL, and return appropriately.
+   */
+}
+
+
+void
+SDLUpdateWindow(SDL_Window *Window, SDL_Renderer *Renderer)
+{
+  SDL_UpdateTexture(Texture, 0, Pixels, TextureWidth * 4);
+  SDL_RenderCopy(Renderer, Texture, 0, 0);
+  SDL_RenderPresent(Renderer);
+}
+
+
+bool
+HandleEvent(SDL_Event *Event)
+{
+  bool ShouldQuit = false;
+  SDL_Window *Window;
+  SDL_Renderer *Renderer;
+
+  switch(Event->type) {
+  case SDL_QUIT:
+    printf("SDL_QUIT\n");
+    ShouldQuit = true;
+    break;
+  case SDL_WINDOWEVENT:
+    switch(Event->window.event) {
+    case SDL_WINDOWEVENT_SIZE_CHANGED:
+      printf("SDL_WINDOWEVENT_SIZE_CHANGED (%d, %d)\n", Event->window.data1, Event->window.data2);
+      Window = SDL_GetWindowFromID(Event->window.windowID);
+      Renderer = SDL_GetRenderer(Window);
+      SDLResizeTexture(Renderer, Event->window.data1, Event->window.data2);
+      break;
+    case SDL_WINDOWEVENT_FOCUS_GAINED:
+      printf("SDL_WINDOWEVENT_FOCUS_GAINED\n");
+      break;
+    case SDL_WINDOWEVENT_EXPOSED:
+      printf("SDL_WINDOWEVENT_EXPOSED\n");
+      // Not sure I need to do anything on this event.
+      Window = SDL_GetWindowFromID(Event->window.windowID);
+      Renderer = SDL_GetRenderer(Window);
+      SDLUpdateWindow(Window, Renderer);
+      break;
+    }
+    break;
+  }
+
+  return(ShouldQuit);
+}
+
+
+int
+main(int argc, char **argv)
+{
+  bool running = true;
+  int Width, Height;
+  int XOffset = 0;
+  int YOffset = 0;
+
+  if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+    printf("Error initializing SDL: %s", SDL_GetError());
+  }
+  
+  SDL_Window *Window = SDL_CreateWindow("gameguy-changed",
+                                        SDL_WINDOWPOS_UNDEFINED,
+                                        SDL_WINDOWPOS_UNDEFINED,
+                                        StartingWidth,
+                                        StartingHeight,
+                                        SDL_WINDOW_RESIZABLE);
+  if (Window) {
+    SDL_Renderer *Renderer = SDL_CreateRenderer(Window, -1, 0);
+
+    if (Renderer) {
+      // Setup
+      SDL_GetWindowSize(Window, &Width, &Height);
+      SDLResizeTexture(Renderer, Width, Height);
+
+      while(running) {
+
+        // todo(stephen): Do I poll at the begining or end or does it matter?
+        SDL_Event Event;
+        while(SDL_PollEvent(&Event)) {
+          if (HandleEvent(&Event)) {
+            running = false;
+          }
+        }
+
+        // Draw
+        RenderWeirdGradient(XOffset, YOffset);
+        SDLUpdateWindow(Window, Renderer);
+
+        // Update
+        XOffset++;
+        YOffset += 2;
+      }
+    } else {
+      printf("Error creating Renderer: %s", SDL_GetError());
+    }
+  } else {
+    printf("Error creating Window: %s", SDL_GetError());
+  }
+
+  SDL_Quit();
+}

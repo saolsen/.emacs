@@ -1,0 +1,1366 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: account_emailaddress; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE account_emailaddress (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    email character varying(75) NOT NULL,
+    verified boolean NOT NULL,
+    "primary" boolean NOT NULL
+);
+
+
+ALTER TABLE public.account_emailaddress OWNER TO the_claw;
+
+--
+-- Name: account_emailaddress_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE account_emailaddress_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.account_emailaddress_id_seq OWNER TO the_claw;
+
+--
+-- Name: account_emailaddress_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE account_emailaddress_id_seq OWNED BY account_emailaddress.id;
+
+
+--
+-- Name: account_emailconfirmation; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE account_emailconfirmation (
+    id integer NOT NULL,
+    email_address_id integer NOT NULL,
+    created timestamp with time zone NOT NULL,
+    sent timestamp with time zone,
+    key character varying(64) NOT NULL
+);
+
+
+ALTER TABLE public.account_emailconfirmation OWNER TO the_claw;
+
+--
+-- Name: account_emailconfirmation_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE account_emailconfirmation_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.account_emailconfirmation_id_seq OWNER TO the_claw;
+
+--
+-- Name: account_emailconfirmation_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE account_emailconfirmation_id_seq OWNED BY account_emailconfirmation.id;
+
+
+--
+-- Name: auth_group; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE auth_group (
+    id integer NOT NULL,
+    name character varying(80) NOT NULL
+);
+
+
+ALTER TABLE public.auth_group OWNER TO the_claw;
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE auth_group_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_id_seq OWNER TO the_claw;
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE auth_group_id_seq OWNED BY auth_group.id;
+
+
+--
+-- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE auth_group_permissions (
+    id integer NOT NULL,
+    group_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_group_permissions OWNER TO the_claw;
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE auth_group_permissions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_permissions_id_seq OWNER TO the_claw;
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE auth_group_permissions_id_seq OWNED BY auth_group_permissions.id;
+
+
+--
+-- Name: auth_permission; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE auth_permission (
+    id integer NOT NULL,
+    name character varying(50) NOT NULL,
+    content_type_id integer NOT NULL,
+    codename character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.auth_permission OWNER TO the_claw;
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE auth_permission_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_permission_id_seq OWNER TO the_claw;
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE auth_permission_id_seq OWNED BY auth_permission.id;
+
+
+--
+-- Name: django_admin_log; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE django_admin_log (
+    id integer NOT NULL,
+    action_time timestamp with time zone NOT NULL,
+    object_id text,
+    object_repr character varying(200) NOT NULL,
+    action_flag smallint NOT NULL,
+    change_message text NOT NULL,
+    content_type_id integer,
+    user_id integer NOT NULL,
+    CONSTRAINT django_admin_log_action_flag_check CHECK ((action_flag >= 0))
+);
+
+
+ALTER TABLE public.django_admin_log OWNER TO the_claw;
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE django_admin_log_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_admin_log_id_seq OWNER TO the_claw;
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE django_admin_log_id_seq OWNED BY django_admin_log.id;
+
+
+--
+-- Name: django_content_type; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE django_content_type (
+    id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    app_label character varying(100) NOT NULL,
+    model character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.django_content_type OWNER TO the_claw;
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE django_content_type_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_content_type_id_seq OWNER TO the_claw;
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE django_content_type_id_seq OWNED BY django_content_type.id;
+
+
+--
+-- Name: django_migrations; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE django_migrations (
+    id integer NOT NULL,
+    app character varying(255) NOT NULL,
+    name character varying(255) NOT NULL,
+    applied timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.django_migrations OWNER TO the_claw;
+
+--
+-- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE django_migrations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_migrations_id_seq OWNER TO the_claw;
+
+--
+-- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE django_migrations_id_seq OWNED BY django_migrations.id;
+
+
+--
+-- Name: django_session; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE django_session (
+    session_key character varying(40) NOT NULL,
+    session_data text NOT NULL,
+    expire_date timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.django_session OWNER TO the_claw;
+
+--
+-- Name: django_site; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE django_site (
+    id integer NOT NULL,
+    domain character varying(100) NOT NULL,
+    name character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.django_site OWNER TO the_claw;
+
+--
+-- Name: django_site_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE django_site_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_site_id_seq OWNER TO the_claw;
+
+--
+-- Name: django_site_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE django_site_id_seq OWNED BY django_site.id;
+
+
+--
+-- Name: openid_provider_openid; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE openid_provider_openid (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    openid character varying(200) NOT NULL,
+    "default" boolean NOT NULL
+);
+
+
+ALTER TABLE public.openid_provider_openid OWNER TO the_claw;
+
+--
+-- Name: openid_provider_openid_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE openid_provider_openid_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.openid_provider_openid_id_seq OWNER TO the_claw;
+
+--
+-- Name: openid_provider_openid_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE openid_provider_openid_id_seq OWNED BY openid_provider_openid.id;
+
+
+--
+-- Name: openid_provider_trustedroot; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE openid_provider_trustedroot (
+    id integer NOT NULL,
+    openid_id integer NOT NULL,
+    trust_root character varying(200) NOT NULL
+);
+
+
+ALTER TABLE public.openid_provider_trustedroot OWNER TO the_claw;
+
+--
+-- Name: openid_provider_trustedroot_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE openid_provider_trustedroot_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.openid_provider_trustedroot_id_seq OWNER TO the_claw;
+
+--
+-- Name: openid_provider_trustedroot_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE openid_provider_trustedroot_id_seq OWNED BY openid_provider_trustedroot.id;
+
+
+--
+-- Name: profile_gwuser; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE profile_gwuser (
+    id integer NOT NULL,
+    password character varying(128) NOT NULL,
+    last_login timestamp with time zone NOT NULL,
+    is_superuser boolean NOT NULL,
+    gwid uuid NOT NULL,
+    email character varying(255) NOT NULL,
+    is_staff boolean NOT NULL,
+    is_active boolean NOT NULL,
+    date_joined timestamp with time zone NOT NULL,
+    date_modified timestamp with time zone NOT NULL,
+    date_last_login timestamp with time zone,
+    date_of_birth date,
+    first_name character varying(255) NOT NULL,
+    last_name character varying(255) NOT NULL,
+    honorific_prefix character varying(255) NOT NULL,
+    honorific_suffix character varying(255) NOT NULL,
+    gender smallint,
+    gender_identity character varying(255) NOT NULL,
+    party_identification smallint,
+    employer character varying(255) NOT NULL,
+    occupation character varying(255) NOT NULL,
+    phone_number character varying(20) NOT NULL,
+    address_1 character varying(255) NOT NULL,
+    address_2 character varying(255) NOT NULL,
+    locality character varying(255) NOT NULL,
+    state character varying(2) NOT NULL,
+    zip_code character varying(10) NOT NULL,
+    middle_name character varying(255) NOT NULL,
+    CONSTRAINT profile_gwuser_gender_check CHECK ((gender >= 0)),
+    CONSTRAINT profile_gwuser_party_identification_check CHECK ((party_identification >= 0))
+);
+
+
+ALTER TABLE public.profile_gwuser OWNER TO the_claw;
+
+--
+-- Name: profile_gwuser_groups; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE profile_gwuser_groups (
+    id integer NOT NULL,
+    gwuser_id integer NOT NULL,
+    group_id integer NOT NULL
+);
+
+
+ALTER TABLE public.profile_gwuser_groups OWNER TO the_claw;
+
+--
+-- Name: profile_gwuser_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE profile_gwuser_groups_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.profile_gwuser_groups_id_seq OWNER TO the_claw;
+
+--
+-- Name: profile_gwuser_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE profile_gwuser_groups_id_seq OWNED BY profile_gwuser_groups.id;
+
+
+--
+-- Name: profile_gwuser_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE profile_gwuser_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.profile_gwuser_id_seq OWNER TO the_claw;
+
+--
+-- Name: profile_gwuser_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE profile_gwuser_id_seq OWNED BY profile_gwuser.id;
+
+
+--
+-- Name: profile_gwuser_user_permissions; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE profile_gwuser_user_permissions (
+    id integer NOT NULL,
+    gwuser_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.profile_gwuser_user_permissions OWNER TO the_claw;
+
+--
+-- Name: profile_gwuser_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE profile_gwuser_user_permissions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.profile_gwuser_user_permissions_id_seq OWNER TO the_claw;
+
+--
+-- Name: profile_gwuser_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE profile_gwuser_user_permissions_id_seq OWNED BY profile_gwuser_user_permissions.id;
+
+
+--
+-- Name: socialaccount_socialaccount; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE socialaccount_socialaccount (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    provider character varying(30) NOT NULL,
+    uid character varying(255) NOT NULL,
+    last_login timestamp with time zone NOT NULL,
+    date_joined timestamp with time zone NOT NULL,
+    extra_data text NOT NULL
+);
+
+
+ALTER TABLE public.socialaccount_socialaccount OWNER TO the_claw;
+
+--
+-- Name: socialaccount_socialaccount_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE socialaccount_socialaccount_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.socialaccount_socialaccount_id_seq OWNER TO the_claw;
+
+--
+-- Name: socialaccount_socialaccount_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE socialaccount_socialaccount_id_seq OWNED BY socialaccount_socialaccount.id;
+
+
+--
+-- Name: socialaccount_socialapp; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE socialaccount_socialapp (
+    id integer NOT NULL,
+    provider character varying(30) NOT NULL,
+    name character varying(40) NOT NULL,
+    client_id character varying(100) NOT NULL,
+    secret character varying(100) NOT NULL,
+    key character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.socialaccount_socialapp OWNER TO the_claw;
+
+--
+-- Name: socialaccount_socialapp_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE socialaccount_socialapp_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.socialaccount_socialapp_id_seq OWNER TO the_claw;
+
+--
+-- Name: socialaccount_socialapp_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE socialaccount_socialapp_id_seq OWNED BY socialaccount_socialapp.id;
+
+
+--
+-- Name: socialaccount_socialapp_sites; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE socialaccount_socialapp_sites (
+    id integer NOT NULL,
+    socialapp_id integer NOT NULL,
+    site_id integer NOT NULL
+);
+
+
+ALTER TABLE public.socialaccount_socialapp_sites OWNER TO the_claw;
+
+--
+-- Name: socialaccount_socialapp_sites_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE socialaccount_socialapp_sites_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.socialaccount_socialapp_sites_id_seq OWNER TO the_claw;
+
+--
+-- Name: socialaccount_socialapp_sites_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE socialaccount_socialapp_sites_id_seq OWNED BY socialaccount_socialapp_sites.id;
+
+
+--
+-- Name: socialaccount_socialtoken; Type: TABLE; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE TABLE socialaccount_socialtoken (
+    id integer NOT NULL,
+    app_id integer NOT NULL,
+    account_id integer NOT NULL,
+    token text NOT NULL,
+    token_secret text NOT NULL,
+    expires_at timestamp with time zone
+);
+
+
+ALTER TABLE public.socialaccount_socialtoken OWNER TO the_claw;
+
+--
+-- Name: socialaccount_socialtoken_id_seq; Type: SEQUENCE; Schema: public; Owner: the_claw
+--
+
+CREATE SEQUENCE socialaccount_socialtoken_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.socialaccount_socialtoken_id_seq OWNER TO the_claw;
+
+--
+-- Name: socialaccount_socialtoken_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: the_claw
+--
+
+ALTER SEQUENCE socialaccount_socialtoken_id_seq OWNED BY socialaccount_socialtoken.id;
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY account_emailaddress ALTER COLUMN id SET DEFAULT nextval('account_emailaddress_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY account_emailconfirmation ALTER COLUMN id SET DEFAULT nextval('account_emailconfirmation_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY auth_group ALTER COLUMN id SET DEFAULT nextval('auth_group_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('auth_group_permissions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY auth_permission ALTER COLUMN id SET DEFAULT nextval('auth_permission_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY django_admin_log ALTER COLUMN id SET DEFAULT nextval('django_admin_log_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY django_content_type ALTER COLUMN id SET DEFAULT nextval('django_content_type_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY django_migrations ALTER COLUMN id SET DEFAULT nextval('django_migrations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY django_site ALTER COLUMN id SET DEFAULT nextval('django_site_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY openid_provider_openid ALTER COLUMN id SET DEFAULT nextval('openid_provider_openid_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY openid_provider_trustedroot ALTER COLUMN id SET DEFAULT nextval('openid_provider_trustedroot_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY profile_gwuser ALTER COLUMN id SET DEFAULT nextval('profile_gwuser_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY profile_gwuser_groups ALTER COLUMN id SET DEFAULT nextval('profile_gwuser_groups_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY profile_gwuser_user_permissions ALTER COLUMN id SET DEFAULT nextval('profile_gwuser_user_permissions_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY socialaccount_socialaccount ALTER COLUMN id SET DEFAULT nextval('socialaccount_socialaccount_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY socialaccount_socialapp ALTER COLUMN id SET DEFAULT nextval('socialaccount_socialapp_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY socialaccount_socialapp_sites ALTER COLUMN id SET DEFAULT nextval('socialaccount_socialapp_sites_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY socialaccount_socialtoken ALTER COLUMN id SET DEFAULT nextval('socialaccount_socialtoken_id_seq'::regclass);
+
+
+--
+-- Name: account_emailaddress_email_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY account_emailaddress
+    ADD CONSTRAINT account_emailaddress_email_key UNIQUE (email);
+
+
+--
+-- Name: account_emailaddress_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY account_emailaddress
+    ADD CONSTRAINT account_emailaddress_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: account_emailconfirmation_key_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY account_emailconfirmation
+    ADD CONSTRAINT account_emailconfirmation_key_key UNIQUE (key);
+
+
+--
+-- Name: account_emailconfirmation_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY account_emailconfirmation
+    ADD CONSTRAINT account_emailconfirmation_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group
+    ADD CONSTRAINT auth_group_name_key UNIQUE (name);
+
+
+--
+-- Name: auth_group_permissions_group_id_permission_id_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_group_id_permission_id_key UNIQUE (group_id, permission_id);
+
+
+--
+-- Name: auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_group
+    ADD CONSTRAINT auth_group_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_permission_content_type_id_codename_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT auth_permission_content_type_id_codename_key UNIQUE (content_type_id, codename);
+
+
+--
+-- Name: auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT auth_permission_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT django_admin_log_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_content_type_app_label_45f3b1d93ec8c61c_uniq; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY django_content_type
+    ADD CONSTRAINT django_content_type_app_label_45f3b1d93ec8c61c_uniq UNIQUE (app_label, model);
+
+
+--
+-- Name: django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY django_content_type
+    ADD CONSTRAINT django_content_type_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY django_migrations
+    ADD CONSTRAINT django_migrations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY django_session
+    ADD CONSTRAINT django_session_pkey PRIMARY KEY (session_key);
+
+
+--
+-- Name: django_site_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY django_site
+    ADD CONSTRAINT django_site_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: openid_provider_openid_openid_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY openid_provider_openid
+    ADD CONSTRAINT openid_provider_openid_openid_key UNIQUE (openid);
+
+
+--
+-- Name: openid_provider_openid_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY openid_provider_openid
+    ADD CONSTRAINT openid_provider_openid_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: openid_provider_trustedroot_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY openid_provider_trustedroot
+    ADD CONSTRAINT openid_provider_trustedroot_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: profile_gwuser_email_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY profile_gwuser
+    ADD CONSTRAINT profile_gwuser_email_key UNIQUE (email);
+
+
+--
+-- Name: profile_gwuser_groups_gwuser_id_group_id_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY profile_gwuser_groups
+    ADD CONSTRAINT profile_gwuser_groups_gwuser_id_group_id_key UNIQUE (gwuser_id, group_id);
+
+
+--
+-- Name: profile_gwuser_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY profile_gwuser_groups
+    ADD CONSTRAINT profile_gwuser_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: profile_gwuser_gwid_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY profile_gwuser
+    ADD CONSTRAINT profile_gwuser_gwid_key UNIQUE (gwid);
+
+
+--
+-- Name: profile_gwuser_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY profile_gwuser
+    ADD CONSTRAINT profile_gwuser_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: profile_gwuser_user_permissions_gwuser_id_permission_id_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY profile_gwuser_user_permissions
+    ADD CONSTRAINT profile_gwuser_user_permissions_gwuser_id_permission_id_key UNIQUE (gwuser_id, permission_id);
+
+
+--
+-- Name: profile_gwuser_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY profile_gwuser_user_permissions
+    ADD CONSTRAINT profile_gwuser_user_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: socialaccount_socialaccount_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY socialaccount_socialaccount
+    ADD CONSTRAINT socialaccount_socialaccount_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: socialaccount_socialaccount_provider_uid_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY socialaccount_socialaccount
+    ADD CONSTRAINT socialaccount_socialaccount_provider_uid_key UNIQUE (provider, uid);
+
+
+--
+-- Name: socialaccount_socialapp_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY socialaccount_socialapp
+    ADD CONSTRAINT socialaccount_socialapp_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: socialaccount_socialapp_sites_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY socialaccount_socialapp_sites
+    ADD CONSTRAINT socialaccount_socialapp_sites_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: socialaccount_socialapp_sites_socialapp_id_site_id_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY socialaccount_socialapp_sites
+    ADD CONSTRAINT socialaccount_socialapp_sites_socialapp_id_site_id_key UNIQUE (socialapp_id, site_id);
+
+
+--
+-- Name: socialaccount_socialtoken_app_id_account_id_key; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY socialaccount_socialtoken
+    ADD CONSTRAINT socialaccount_socialtoken_app_id_account_id_key UNIQUE (app_id, account_id);
+
+
+--
+-- Name: socialaccount_socialtoken_pkey; Type: CONSTRAINT; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+ALTER TABLE ONLY socialaccount_socialtoken
+    ADD CONSTRAINT socialaccount_socialtoken_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: account_emailaddress_email_like; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX account_emailaddress_email_like ON account_emailaddress USING btree (email varchar_pattern_ops);
+
+
+--
+-- Name: account_emailaddress_user_id; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX account_emailaddress_user_id ON account_emailaddress USING btree (user_id);
+
+
+--
+-- Name: account_emailconfirmation_email_address_id; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX account_emailconfirmation_email_address_id ON account_emailconfirmation USING btree (email_address_id);
+
+
+--
+-- Name: account_emailconfirmation_key_like; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX account_emailconfirmation_key_like ON account_emailconfirmation USING btree (key varchar_pattern_ops);
+
+
+--
+-- Name: auth_group_permissions_0e939a4f; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX auth_group_permissions_0e939a4f ON auth_group_permissions USING btree (group_id);
+
+
+--
+-- Name: auth_group_permissions_8373b171; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX auth_group_permissions_8373b171 ON auth_group_permissions USING btree (permission_id);
+
+
+--
+-- Name: auth_permission_417f1b1c; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX auth_permission_417f1b1c ON auth_permission USING btree (content_type_id);
+
+
+--
+-- Name: django_admin_log_417f1b1c; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX django_admin_log_417f1b1c ON django_admin_log USING btree (content_type_id);
+
+
+--
+-- Name: django_admin_log_e8701ad4; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX django_admin_log_e8701ad4 ON django_admin_log USING btree (user_id);
+
+
+--
+-- Name: django_session_de54fa62; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX django_session_de54fa62 ON django_session USING btree (expire_date);
+
+
+--
+-- Name: openid_provider_openid_openid_like; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX openid_provider_openid_openid_like ON openid_provider_openid USING btree (openid varchar_pattern_ops);
+
+
+--
+-- Name: openid_provider_openid_user_id; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX openid_provider_openid_user_id ON openid_provider_openid USING btree (user_id);
+
+
+--
+-- Name: openid_provider_trustedroot_openid_id; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX openid_provider_trustedroot_openid_id ON openid_provider_trustedroot USING btree (openid_id);
+
+
+--
+-- Name: profile_gwuser_groups_0e939a4f; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX profile_gwuser_groups_0e939a4f ON profile_gwuser_groups USING btree (group_id);
+
+
+--
+-- Name: profile_gwuser_groups_8caf5bc1; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX profile_gwuser_groups_8caf5bc1 ON profile_gwuser_groups USING btree (gwuser_id);
+
+
+--
+-- Name: profile_gwuser_user_permissions_8373b171; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX profile_gwuser_user_permissions_8373b171 ON profile_gwuser_user_permissions USING btree (permission_id);
+
+
+--
+-- Name: profile_gwuser_user_permissions_8caf5bc1; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX profile_gwuser_user_permissions_8caf5bc1 ON profile_gwuser_user_permissions USING btree (gwuser_id);
+
+
+--
+-- Name: socialaccount_socialaccount_user_id; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX socialaccount_socialaccount_user_id ON socialaccount_socialaccount USING btree (user_id);
+
+
+--
+-- Name: socialaccount_socialapp_sites_site_id; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX socialaccount_socialapp_sites_site_id ON socialaccount_socialapp_sites USING btree (site_id);
+
+
+--
+-- Name: socialaccount_socialapp_sites_socialapp_id; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX socialaccount_socialapp_sites_socialapp_id ON socialaccount_socialapp_sites USING btree (socialapp_id);
+
+
+--
+-- Name: socialaccount_socialtoken_account_id; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX socialaccount_socialtoken_account_id ON socialaccount_socialtoken USING btree (account_id);
+
+
+--
+-- Name: socialaccount_socialtoken_app_id; Type: INDEX; Schema: public; Owner: the_claw; Tablespace: 
+--
+
+CREATE INDEX socialaccount_socialtoken_app_id ON socialaccount_socialtoken USING btree (app_id);
+
+
+--
+-- Name: account_emailconfirmation_email_address_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY account_emailconfirmation
+    ADD CONSTRAINT account_emailconfirmation_email_address_id_fkey FOREIGN KEY (email_address_id) REFERENCES account_emailaddress(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_content_type_id_508cf46651277a81_fk_django_content_type_id; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY auth_permission
+    ADD CONSTRAINT auth_content_type_id_508cf46651277a81_fk_django_content_type_id FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_group_permissio_group_id_689710a9a73b7457_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permissio_group_id_689710a9a73b7457_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_group_permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY auth_group_permissions
+    ADD CONSTRAINT auth_group_permission_id_1f49ccbbdc69d2fc_fk_auth_permission_id FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: djan_content_type_id_697914295151027a_fk_django_content_type_id; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT djan_content_type_id_697914295151027a_fk_django_content_type_id FOREIGN KEY (content_type_id) REFERENCES django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: django_admin_log_user_id_52fdd58701c5f563_fk_profile_gwuser_id; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY django_admin_log
+    ADD CONSTRAINT django_admin_log_user_id_52fdd58701c5f563_fk_profile_gwuser_id FOREIGN KEY (user_id) REFERENCES profile_gwuser(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: openid_provider_trustedroot_openid_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY openid_provider_trustedroot
+    ADD CONSTRAINT openid_provider_trustedroot_openid_id_fkey FOREIGN KEY (openid_id) REFERENCES openid_provider_openid(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: profile_gw_permission_id_45eecdeeff7c363e_fk_auth_permission_id; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY profile_gwuser_user_permissions
+    ADD CONSTRAINT profile_gw_permission_id_45eecdeeff7c363e_fk_auth_permission_id FOREIGN KEY (permission_id) REFERENCES auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: profile_gwuser__gwuser_id_44f820b19e4116b0_fk_profile_gwuser_id; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY profile_gwuser_user_permissions
+    ADD CONSTRAINT profile_gwuser__gwuser_id_44f820b19e4116b0_fk_profile_gwuser_id FOREIGN KEY (gwuser_id) REFERENCES profile_gwuser(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: profile_gwuser_gro_gwuser_id_b9c4eb04a61fe_fk_profile_gwuser_id; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY profile_gwuser_groups
+    ADD CONSTRAINT profile_gwuser_gro_gwuser_id_b9c4eb04a61fe_fk_profile_gwuser_id FOREIGN KEY (gwuser_id) REFERENCES profile_gwuser(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: profile_gwuser_group_group_id_776ab3f682d6ac6f_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY profile_gwuser_groups
+    ADD CONSTRAINT profile_gwuser_group_group_id_776ab3f682d6ac6f_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: socialaccount_socialtoken_account_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY socialaccount_socialtoken
+    ADD CONSTRAINT socialaccount_socialtoken_account_id_fkey FOREIGN KEY (account_id) REFERENCES socialaccount_socialaccount(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: socialaccount_socialtoken_app_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY socialaccount_socialtoken
+    ADD CONSTRAINT socialaccount_socialtoken_app_id_fkey FOREIGN KEY (app_id) REFERENCES socialaccount_socialapp(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: socialapp_id_refs_id_e7a43014; Type: FK CONSTRAINT; Schema: public; Owner: the_claw
+--
+
+ALTER TABLE ONLY socialaccount_socialapp_sites
+    ADD CONSTRAINT socialapp_id_refs_id_e7a43014 FOREIGN KEY (socialapp_id) REFERENCES socialaccount_socialapp(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

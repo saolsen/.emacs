@@ -1,0 +1,10 @@
+#include <sdl2/sdl.h>
+#include "gameguy.h"
+
+void
+update_and_render(SDL_Renderer renderer)
+{
+  /* Do I even want to pass the renderer in since I can get it from sdl? */
+  Window = SDL_GetWindowFromID(Event->window.windowID);
+  Renderer = SDL_GetRenderer(Window);
+}

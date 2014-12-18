@@ -1,0 +1,172 @@
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (with-current-buffer
+      (url-retrieve-synchronously
+       "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
+    (goto-char (point-max))
+    (eval-print-last-sexp)))
+
+(setq el-get-user-package-directory "~/.emacs.d/el-get-init/")
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
+
+;; COPIED FROM SANE DEFAULTS HACK HACK HACK
+ (ido-mode t)
+  (setq ido-enable-flex-matching t)
+
+  (menu-bar-mode -1)
+  (when (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
+  (when (fboundp 'scroll-bar-mode)
+    (scroll-bar-mode -1))
+
+  (autoload 'zap-up-to-char "misc"
+    "Kill up to, but not including ARGth occurrence of CHAR." t)
+
+  (require 'uniquify)
+  (setq uniquify-buffer-name-style 'forward)
+
+  (require 'saveplace)
+  (setq-default save-place t)
+
+  (global-set-key (kbd "M-/") 'hippie-expand)
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
+  (global-set-key (kbd "M-z") 'zap-up-to-char)
+
+  (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+  (global-set-key (kbd "C-r") 'isearch-backward-regexp)
+  (global-set-key (kbd "C-M-s") 'isearch-forward)
+  (global-set-key (kbd "C-M-r") 'isearch-backward)
+
+  (show-paren-mode 1)
+  (setq-default indent-tabs-mode nil)
+  (setq x-select-enable-clipboard t
+        x-select-enable-primary t
+        save-interprogram-paste-before-kill t
+        apropos-do-all t
+        mouse-yank-at-point t
+        require-final-newline t
+        visible-bell t
+        ediff-window-setup-function 'ediff-setup-windows-plain
+        save-place-file (concat user-emacs-directory "places")
+        backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                                 "backups"))))
+;; END OF COPYING
+
+;; PATH
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
+;; IDO
+(setq ido-decorations
+      (quote
+       ("\n-> "           ; Opening bracket around prospect list
+        ""                ; Closing bracket around prospect list
+        "\n   "           ; separator between prospects
+        "\n   ..."        ; appears at end of truncated list of prospects
+        "["               ; opening bracket around common match string
+        "]"               ; closing bracket around common match string
+        " [No match]"     ; displayed when there is no match
+        " [Matched]"      ; displayed if there is a single match
+        " [Not readable]" ; current diretory is not readable
+        " [Too big]"      ; directory too big
+        " [Confirm]")))   ; confirm creation of new file or buffer
+
+(add-hook 'ido-setup-hook
+          (lambda ()
+            (define-key ido-completion-map [down] 'ido-next-match)
+            (define-key ido-completion-map [up] 'ido-prev-match)
+            (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+            (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+;; Clojure
+(defun turn-on-paredit () (paredit-mode 1))
+(add-hook 'clojure-mode-hook 'turn-on-paredit)
+(add-hook 'cider-repl-mode-hook 'company-mode)
+(add-hook 'cider-mode-hook 'company-mode)
+
+;; Projectile
+(projectile-global-mode)
+
+;; Visual
+(setq visual-bell nil)
+(setq ring-bell-function 'ignore)
+
+;; Line Numbers
+(global-linum-mode t)
+(setq linum-format "%4d ")
+(line-number-mode 1)
+(column-number-mode 1)
+
+;; Tabs
+(setq-default tab-width 2)
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Set C-x ret to be the M-x command
+(global-set-key (kbd "C-x RET") 'execute-extended-command)
+
+;; Arcadia
+;; This is hardcoded to my lsystems project, TODO fix that
+(defcustom arcadia-repl-command "ruby /Users/steveo/Dropbox/unity/lsystems/Assets/Clojure/Editor/repl-client.rb"
+  "Command to use for the Arcadia REPL into Unity.")
+
+(defcustom lein-repl-command "lein repl"
+"Command to use to start inferior lisp repl")
+
+(defun arcadia-repl ()
+  "Start repl"
+  (interactive)
+  (run-lisp arcadia-repl-command))
+
+;; Racket
+(global-set-key (kbd "s-r") 'racket-run)
+(global-set-key (kbd "s-R") 'racket-test)
+
+;;(load-theme 'solarized-light t)
+;;(load-theme 'tangotango t)
+(load-theme 'tango-dark t)
+;;(load-theme 'leuven t)
+
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
+;; C STUFF
+(global-set-key (kbd "C-c C-k") 'compile)
+
+;; Javascript
+;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;; (add-hook 'js2-mode-hook 'js2-minor-mode)
+;; (add-hook 'js2-mode-hook 'ac-js2-mode)
+
+(defun my-paredit-nonlisp ()
+  "Turn on paredit mode for non-lisps."
+  (interactive)
+  (set (make-local-variable 'paredit-space-for-delimiter-predicates)
+       '((lambda (endp delimiter) nil)))
+  (paredit-mode 1))
+
+(add-hook 'js2-mode-hook 'my-paredit-nonlisp)
+;; (define-key js2-mode-map "{" 'paredit-open-curly)
+;; (define-key js2-mode-map "}" 'paredit-close-curly-and-newline)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("2f076a213862a88945ff4f1bb88cc58a3dbd3a740e1ba769839a57e2f7c1d3a0" "e16a771a13a202ee6e276d06098bc77f008b73bbac4d526f160faa2d76c1dd0e" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+ '(js2-highlight-external-variables t)
+ '(js2-highlight-level 3))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

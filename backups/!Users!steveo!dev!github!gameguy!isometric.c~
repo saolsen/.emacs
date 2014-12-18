@@ -1,0 +1,25 @@
+/*
+ * An isometric projection style game. Like don't starve or binding of isaac or whatever.
+ */
+#include <sdl2/sdl.h>
+#include <stdbool.h>
+#include "gameguy.h"
+
+/*
+ * Maybe I should start getting comfortable with opengl.
+ */
+struct Gamestate {
+  int health;
+};
+
+void update_and_render(SDL_Renderer *renderer,
+                       int screen_width,
+                       int screen_height,
+                       struct KeysDown *keys_down,
+                       float dt)
+{
+  /* Initialize Game */
+  static struct Gamestate gamestate = {.health = 10};
+
+  
+}

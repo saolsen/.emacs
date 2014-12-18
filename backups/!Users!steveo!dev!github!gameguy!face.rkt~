@@ -1,0 +1,6 @@
+#lang racket
+;; Precedurally generated face
+(require 2htdp/image)
+
+(define (face)
+  (let ([])))

@@ -1,0 +1,7 @@
+P=gameguy
+OBJECTS=
+CFLAGS = -g -Wall
+LDLIBS=
+CC=clang
+
+$(P): $(OBJECTS)
